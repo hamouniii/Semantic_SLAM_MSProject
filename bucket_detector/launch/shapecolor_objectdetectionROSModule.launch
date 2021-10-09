@@ -1,0 +1,11 @@
+<!-- Launches: ShapeColor_ObjectDetection -->
+<launch>
+
+	<arg name="front_camera_image_topic_name" 										default="/camera/color/image_raw" />
+  <arg name="object_recognized_front_camera_topic_name" 				default="/image_processed/object_recognized_front_camera" />
+    
+		<node name="ShapeColor_ObjectDetection" pkg="ShapeColor_ObjectDetection" type="ObjectDetection_Node" output="screen" respawn="true">
+				<param name="front_camera_image_topic_name"											value="$(arg front_camera_image_topic_name)" 									type="string"/>
+				<param name="object_recognized_front_camera_topic_name" 				value="$(arg object_recognized_front_camera_topic_name)" 			type="string"/>
+		</node>
+</launch>
